@@ -20,7 +20,7 @@ const Ship_Card: FC<Props> = ({ record_id, rec_name, description, photo_record }
 		    <Card.Text>
 		          {description}
 		    </Card.Text>
-			<div class= "button_class">
+			<div className= "button_class">
 	    	<Button  href={"record_of_animal/" + record_id.toString()} variant="light">Подробнее</Button>
 			</div>
 		</Card.Body>

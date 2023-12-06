@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
-import { Record, get_Record_List, get_Record } from '../../modules/getDataFromAPI'
+import { Record, get_Record_List } from '../../modules/getDataFromAPI'
 import Record_Card from '../../components/Record_Card/Record_Card';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import "./Record_List_Page.css"
-import { FilterData, Filter }  from '../../components/Filter/Filter';
+import {  Filter }  from '../../components/Filter/Filter';
 
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
