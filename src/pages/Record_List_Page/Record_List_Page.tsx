@@ -17,32 +17,29 @@ import Col from 'react-bootstrap/Col';
 
 const RecordListPage: FC = () => {
     const [records, setProducts] = useState<Record[]>([]);
-
+    const [count,setCount] = useState(0)
 
     const location = useLocation();
     const request = new URLSearchParams(location.search);
     const requestName = request.get('name_filter');
 
-
-    const title = (requestName ? requestName : '');
-
-
+    const [title,setTitle] = useState(requestName ? requestName : '');
     useEffect(() => {
-     get_Record_List(title)
+        get_Record_List(title)
             .then((response) => {
                 setProducts(response);
             });
-    },[]);
+    },[count]);
     return (
         <Container>
 
             <Row>
-                <Breadcrumbs pages={[]} />
-            </Row>
-            <Row>
             <Col style={{ width: "22%", margin: "30px" }}>
                     <Filter
                         title={title}
+                        changeTitle={setTitle}
+                        count={count}
+                        send = {setCount}
                     />
                 </Col>
             </Row>

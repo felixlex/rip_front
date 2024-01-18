@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Button } from 'react-bootstrap'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { Link } from "react-router-dom";
 
 export interface Param {
     key: string,
@@ -38,7 +39,7 @@ const Ship_Info: FC<Props> = ({ record_id, rec_name, description, photo_record  
                 </tr>
                 ))}</tbody>
             </table>
-        <Button variant="outline-primary" href="/">Назад</Button>
+        <Link to="rip_front/">Назад</Link>
         </div>
     </div>
 )

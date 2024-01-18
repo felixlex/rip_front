@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import { Card } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './Record_Card.css'
-
+import { Link } from "react-router-dom";
 interface Props {
     record_id: Number,
     rec_name: string,
@@ -21,7 +20,7 @@ const Ship_Card: FC<Props> = ({ record_id, rec_name, description, photo_record }
 		          {description}
 		    </Card.Text>
 			<div className= "button_class">
-	    	<Button  href={"record_of_animal/" + record_id.toString()} variant="light">Подробнее</Button>
+			<Link to={"rip_front/record_of_animal/:id/"+String(record_id)+'/'}>Подробнее</Link>
 			</div>
 		</Card.Body>
     </Card>

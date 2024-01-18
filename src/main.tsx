@@ -17,15 +17,15 @@ const router = createBrowserRouter([
     //     element: <MainPage />
     // },
     {
-        path: `${getBase()}/`,
+        path: `rip_front/`,
         element: <Record_List_Page />
     },
     {
-        path: `${getBase()}/record_of_animal/:id/`,
+        path: `rip_front/record_of_animal/:id/`,
         element: <Record_Page />
     },
     {
-        path: "*",
+        path: "rip_front/record_of_animal/",
         element: <Record_List_Page />
     }
 ])

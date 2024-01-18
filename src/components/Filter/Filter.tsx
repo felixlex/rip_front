@@ -1,28 +1,29 @@
 import { FC } from 'react'
-import { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 
 export interface FilterData {
-    title: string
+    title: string,
+    changeTitle:Function,
+    count: number,
+    send: Function
 }
 
-export const Filter: FC<FilterData> = ({ title}) => {
-    const [inputTitle, setInputTitle] = useState(title);
+export const Filter: FC<FilterData> = ({ title,changeTitle,count,send}) => {
+
 
     return (
         <Container id="filter">
-            <form action="" method="get" id="filter-form">
-                <Container style={{ transform: "translateY(-40%)", paddingBottom: "20px", paddingLeft: "20px", borderBottom: "solid 1px #9e9b9b" }}>
-                    <Row style={{ display: "flex", transform: "translateY(-20%)" }}>
-                        <input className="filter-input" name="name_filter" type="text" size={30} placeholder="Введите название" value={inputTitle} onChange={(e) => setInputTitle(e.target.value)} /> 
-                        <input type="submit" hidden />   
+                    <Row style={{ display: "flex" }}>
+                        <div>
+                        <input className="filter-input" name="name_filter" type="text" size={30} placeholder="Введите название" value={title} onChange={(e) => changeTitle(e.target.value)} />
+                        </div>
+                        <div>
+                        <input type="button" onClick={()=>{send(count+1)}} value='Поиск'/>
+                            </div> 
                     </Row>
-
-                </Container>
-            </form>
         </Container>
     )
 }
