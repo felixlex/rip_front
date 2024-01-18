@@ -38,7 +38,7 @@ const Ship_Info: FC<Props> = ({ record_id, rec_name, description, photo_record  
                 </tr>
                 ))}</tbody>
             </table>
-        <Link to="rip_front/">Назад</Link>
+        <Link to="/rip_front/">Назад</Link>
         </div>
     </div>
 )
