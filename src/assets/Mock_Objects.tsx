@@ -11,7 +11,7 @@ export interface Record {
 export const default_Record = (id: number): Record => 
  {return {
     record_id: id,
-    rec_name: "",
+    rec_name: String(id),
     units: "",
     env_measur: "string",
     status_rec: "Добавлен",
