@@ -1,5 +1,5 @@
 import { default_Record } from "../assets/Mock_Objects"
-
+import { list_of_default } from "../assets/Mock_Objects"
 export interface Record {
     record_id: number,
     rec_name: string,
@@ -29,10 +29,7 @@ export const get_Record_List = async ( name: string): Promise<Record[]> => {
         return result
     } catch (error) {
         console.log('Error')
-        let result = []
-        for (let i = 1; i <= 5; ++i) {
-            result.push(default_Record(i))
-        }
+        let result = list_of_default
         result = result.filter((record) => {
             return (name == '' || record.rec_name.toLowerCase().includes(name.toLowerCase()))
         })
@@ -51,7 +48,7 @@ export const get_Record = async (id: string): Promise<Record> => {
         const result = await response.json()
         return result
     } catch (error) {
-        return default_Record(Number(id))
+        return list_of_default[Number(id)-1]
     }
     
 }

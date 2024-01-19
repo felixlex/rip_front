@@ -7,7 +7,21 @@ export interface Record {
     description: string,
     photo_record: string
 }
-
+export const list_of_default = [{record_id: 1,
+    rec_name: "Baba",
+    units: "",
+    env_measur: "string",
+    status_rec: "Добавлен",
+    description: "Описание рекорда",
+    photo_record:""
+},{record_id: 2,
+        rec_name: "Paba",
+        units: "",
+        env_measur: "string",
+        status_rec: "Добавлен",
+        description: "Описание рекорда",
+        photo_record:""}
+]
 export const default_Record = (id: number): Record => 
  {return {
     record_id: id,
