@@ -1,11 +1,20 @@
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Record, get_Record } from '../../modules/getDataFromAPI.ts'
-import Record_Info, {Param} from '../../components/Record_Info/Record_Info.tsx'
+import Record_Info, {Param} from '../../components/Record_Info/Record_Info'
 import "./Record_Page.css"
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs.tsx';
 import { Container, Row } from 'react-bootstrap';
-import { getBase } from '../../../path_config.ts';
+import axios from 'axios'
+import My_Navbar_Without_Cart from '../../components/Navbar/Navbar';
+
+export interface Record {
+    record_id: number,
+    rec_name: string,
+    units?: string,
+    env_measur?: string,
+    status_rec: string,
+    description: string,
+    photo_record: string
+}
 
 const Record_Page: FC = () => {
     const { id } = useParams();
@@ -20,25 +29,22 @@ const Record_Page: FC = () => {
         return params
     }
 
+    const get_Record = async () => {
+        const {data} = await axios(`http://127.0.0.1:8000/records/${id}`, {
+            method: "Get",
+        })
+        setRecord(data);
+        setParameters(getParams(data));
+    }
     useEffect(() => {
-        id && get_Record(id)
-            .then((response) => {
-                setRecord(response);
-                setParameters(getParams(response));
-            })
-            .then(() => {
-                console.log(record);
-                console.log(parameters);
-            })
+        get_Record()
     }, [id]);
 
     return (
         <Container>
+            <My_Navbar_Without_Cart/>
             <Row>
-                {id && record && <Breadcrumbs pages={[ { link: `${getBase()}/classes_of_records/${id}/`, title: `${record.rec_name}` } ]} />}
-            </Row>
-            <Row>
-                {record && parameters && id && <Record_Info record_id={parseInt(id)} rec_name={record.rec_name} description={record.description} parameters={parameters} photo_record={record.photo_record} />}
+                {record && parameters && id && <Record_Info record_id={parseInt(id)} description={record.description} rec_name={record.rec_name} parameters={parameters} photo_record={record.photo_record} />}
             </Row>
         </Container>
     )

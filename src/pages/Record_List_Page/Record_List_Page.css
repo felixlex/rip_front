@@ -1,6 +1,16 @@
-#box {
+.box{    margin-top: 10px;
+    display: contents;}
+
+.navbar{
+    bottom: unset !important;
+    position: relative !important;
     display: flex;
-    flex-wrap: wrap;
-    height: max-content;
-    padding-bottom: 30px;
+    height: 350px;
+    background: url("./assets/bck.jpg");
+    background-size: 100% 130%;
+    width: 100%;
+}
+[id='1']{
+    align-self: flex-end;
+
 }

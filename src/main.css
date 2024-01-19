@@ -1,108 +1,19 @@
-#header {
-    background-color: rgb(245, 234, 123);
+.box{    margin-top: 10px;
+    display: contents;}
+
+.navbar{
+    bottom: unset !important;
+    position: relative !important;
+    display: flex;
+    height: 350px;
+    background: url("./assets/bck.png");
+    background-size: 100% 100%;
+    width: 100%;
+}
+[id='1']{
+    align-self: flex-end;
 
 }
 .container{
-    min-width: 100%;
-}
-
-
-.base_container{
-    width: 843px;
-    height: 296px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #94ABFF;
-    margin-bottom: 32px;
-    margin-left: 206px;
-    
-}
-
-.picture_container{
-    width: 473px;
-    height: 266px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    display: inline;
-    position: absolute;
-    margin-left: 11px;
-    margin-top: 15px;
-}
-
-.an_photo{
-    width: 473px;
-    height: 266px;
-    flex-shrink: 0;
-    border-radius: 15px;
-}
-
-.anrecord_container{
-    display: inline;
-    position: absolute;
-    width: 257px;
-    height: 22px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #FFF;
-    margin-top: 15px;
-    margin-left: 546px;
-    text-align: center;
-    font-size: 22px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-}
-
-.aninf_container{
-    width: 257px;
-    height: 145px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #FFF;
-    display: inline;
-    position: absolute;
-    margin-top: 61px;
-    margin-left: 546px;
-    text-align: center;
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-.button_container{
-    width: 257px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #FFF;
-    display: inline;
-    position: absolute;
-    margin-top: 245px;
-    margin-left: 546px;
-    text-align: center;
-    font-size: 20px;
-}
-
-.search_field{
-    width: 638px;
-    height: 38px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border-color: #FFF;
-    background: #FFF;
-    margin-top: 26px;
-    margin-bottom: 89px;
-    margin-left: 308px;
-}
-
-.name_cantainer{
-    width: 299px;
-    height: 25px;
-    border-radius: 15px;
-    background: #FFF;
-    margin-top: 16px;
-    margin-left: 478px;
-    margin-bottom: 19px;
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-size: 25px;
+	min-width:100%
 }

@@ -1,3 +1,26 @@
+
+interface Response {
+    draft_id:-1,
+    data: Record[]
+}
+
+
+const getDefaultRecord= (): Record[] => {
+    let result = []
+    let count = 3
+    for (let i = 1; i <= count; ++i) {
+        result.push(default_Record(i))
+    }
+    return result}
+
+export const getDefaultResponse = (): Response => {
+    return {
+        draft_id:-1,
+        data: [default_Record(1)]
+    }
+}
+
+
 export interface Record {
     record_id: number,
     rec_name: string,
@@ -7,25 +30,11 @@ export interface Record {
     description: string,
     photo_record: string
 }
-export const list_of_default = [{record_id: 1,
-    rec_name: "Baba",
-    units: "",
-    env_measur: "string",
-    status_rec: "Добавлен",
-    description: "Описание рекорда",
-    photo_record:""
-},{record_id: 2,
-        rec_name: "Paba",
-        units: "",
-        env_measur: "string",
-        status_rec: "Добавлен",
-        description: "Описание рекорда",
-        photo_record:""}
-]
+
 export const default_Record = (id: number): Record => 
  {return {
     record_id: id,
-    rec_name: String(id),
+    rec_name: "Название" + (id).toString(),
     units: "",
     env_measur: "string",
     status_rec: "Добавлен",

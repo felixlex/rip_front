@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Container, Row } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { getBase } from '../../../path_config.ts';
+
 interface BreadcrumbsProps {
     link: string,
     title: string
@@ -9,7 +10,7 @@ interface BreadcrumbsProps {
 const Breadcrumbs: FC<{ pages: BreadcrumbsProps[] }> = ({ pages }) =>  (
     <Container id="breadcrumbs">
         <Row style={{ display: "block" }}>
-        <Link to="/rip_front/">Список рекордов</Link>
+            <a href={`${getBase()}/`} style={{ textDecoration: "None" }}>Список услуг</a>
             /
             {pages && pages.map((page) => (
                 <a href={ page.link } style={{ textDecoration: "None" }}>{page.title }</a>
