@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Link } from "react-router-dom";
+import './Record_Info.css'
 
 export interface Param {
     key: string,

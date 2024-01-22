@@ -1,0 +1,23 @@
+
+@media (max-width: 2000px) {
+    .card {
+        width: 20rem;
+        height: 27rem;
+    }}
+
+@media (max-width: 1700px) {
+    .card {
+        width: 23rem;
+        height: 30rem;
+    }}
+
+@media (max-width: 1250px) {
+    .card {
+        width: 25rem;
+        height: 32rem;
+    }}
+@media (max-width: 1000px) {
+    .card {
+        width: 30rem;
+        height: 35rem;
+    }}
