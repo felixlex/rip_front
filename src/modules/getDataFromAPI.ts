@@ -1,4 +1,3 @@
-import { default_Record } from "../assets/Mock_Objects"
 import { list_of_default } from "../assets/Mock_Objects"
 export interface Record {
     record_id: number,

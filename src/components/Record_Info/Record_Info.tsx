@@ -26,15 +26,15 @@ const Ship_Info: FC<Props> = ({ record_id, rec_name, description, photo_record  
             <div className="product-bar">
                 <label htmlFor="product-params" className="product-params-text">{description}</label>
             </div>
-            <table className="product-params">
+            <table className="product-params" style={{"width":"100%"}}>
                 <tbody>
                 {parameters && parameters.map((param) => (
                     param.value && <tr className="product-param">
                     <td className="property-key">
-                        <h4 className="property-key-text">{param.key}</h4>
+                        <h4 className="property-key-text" style={{"width":"50%"}}>{param.key}</h4>
                         <h4 className="property-key-dots"></h4>
                     </td>
-                    <td className="property-value">{param.value}</td>
+                    <td className="property-value" style={{"width":"50%"}}>{param.value}</td>
                 </tr>
                 ))}</tbody>
             </table>
